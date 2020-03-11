@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+  </head>
+  <style>
+    .card {
+      color: #fff;
+      height: 150px;
+      width: 200px;
+      border: 4px solid #333;
+      margin-bottom: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 12px rgba(110, 83, 83, 0.445);
+    }
+
+    .card {
+      border: 10px solid greenyellow;
+    }
+    .card {
+      border: 10px solid grey;
+    }
+    .card {
+      border: 10px solid black;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .img-wrapper {
+      width: 300px;
+      background: #000;
+      flex-grow: 2;
+      flex-shrink: 3;
+      flex-basis: 150px;
+    }
+
+    img {
+      max-width: 100%;
+      /* vertical-align: bottom; */
+      display: block;
+    }
+
+    /* .bg-img {
+      background-image: url("data:image/jpeg;base64,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");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      height: 250px;
+    } */
+
+    main {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: baseline;
+    }
+  </style>
+  <body>
+    <!-- Flexbox  -->
+    <main>
+      <div class="card red">
+        <h3>heading</h3>
+        <p>notes</p>
+        <p>more notes</p>
+      </div>
+
+      <div class="card blue">
+        <h3>heading</h3>
+        <p>notes</p>
+        <p>more notes</p>
+      </div>
+
+      <div class="card green">
+        <h3>heading</h3>
+        <p>notes</p>
+        <p>more notes</p>
+      </div>
+
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <div class="bg-img"></div>
+      <div class="img-wrapper">
+        <img src="img/pit-bull-dog-breed-picture-1.jpg" alt="" />
+      </div>
+
+      <div class="img-wrapper">
+        <img
+          src="https://media.necn.com/2019/09/GettyImages-1143880146-1.jpg?resize=1200%2C675"
+          alt=""
+        />
+      </div>
+
+      <!-- <div class="bg-img"></div> -->
+    </main>
+  </body>
+</html>
+
+<!-- <html>
+  <head></head>
+  <body>
+    <header>
+      <nav></nav>
+    </header>
+    <body>
+      <main class="main">
+        <section>
+          <div></div>
+        </section>
+        <section>
+          <div></div>
+        </section>
+        <section>
+          <div></div>
+        </section>
+        <aside></aside>
+      </main>
+      <footer>&copy;2020</footer>
+    </body>
+  </body>
+</html> -->
